@@ -194,6 +194,26 @@ class SetFunctionTest(unittest.TestCase):
         self.assertNotEqual(result_issubset, True)
     # ========== END ISSUBSET TEST
 
+    # ========== BEGIN ISSUPERSET TEST
+    def test_set_issuperset_success_scenario(self) -> None:
+        set_satu = {1, 2, 3, 4, 5, 6}
+        set_dua = {1, 2, 3}
+        set_function = SetFunction(set_satu, set_dua)
+        result_issuperset = set_function.\
+            issuperset_function()
+
+        self.assertEqual(result_issuperset, True)
+
+    def test_set_issuperset_fail_scenario(self) -> None:
+        set_satu = {1, 2, 3, 4, 5, 6}
+        set_dua = {1, 2, 3}
+        set_function = SetFunction(set_satu, set_dua)
+        result_issuperset = set_function.\
+            issubset_function()
+
+        self.assertNotEqual(result_issuperset, True)
+    # ========== END ISSUPERSET TEST
+
 
 if __name__ == '__main__':
     unittest.main()
