@@ -156,7 +156,7 @@ number = 10
 print(cetak_bilangan(number))
 # akan mencetak 15
 print(number)
-# akan mencetak 15
+# akan mencetak 10
 
 
 # jika variabel yang dilewatkan berupa tipe data struktur mutable
