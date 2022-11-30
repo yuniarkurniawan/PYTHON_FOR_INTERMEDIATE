@@ -1,5 +1,5 @@
 import unittest
-from Decorator_1 import cetak_nama, list_bilangan
+from Decorator_1 import cetak_nama, list_bilangan, cetak_nama_siswa
 
 class Decorator_1_Test(unittest.TestCase):
     def setUp(self) -> None:
@@ -28,6 +28,19 @@ class Decorator_1_Test(unittest.TestCase):
         result_list_bilangan_genap = list_bilangan(list_data)
         self.assertNotEqual(result_list_bilangan_genap, [2, 4, 6, 7])
     # ========== END CETAK_BILANGAN_GENAP TEST
+
+    # ========== BEGIN NAMA_SISWA TEST
+    def test_cetak_nama_lengkap_success_scenario(self) -> None:
+        
+        nama = 'Yuniar'
+        data_out = cetak_nama_siswa(nama)
+        self.assertEqual(data_out, 'Nama : Yuniar Kurniawan')
+
+    def test_cetak_nama_lengkap_fail_scenario(self) -> None:
+        nama = 'Yuniar'
+        data_out = cetak_nama_siswa(nama)
+        self.assertNotEqual(data_out, 'Nama : Yuniar')
+    # ========== END NAMA_SISWA TEST
 
 
 if __name__ == '__main__':

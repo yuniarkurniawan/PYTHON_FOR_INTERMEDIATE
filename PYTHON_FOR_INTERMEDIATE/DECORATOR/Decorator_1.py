@@ -29,3 +29,21 @@ def dekorator_cetak_bilangan_genap(func):
 @dekorator_cetak_bilangan_genap
 def list_bilangan(list_bilangan = list()):
     return list_bilangan
+
+
+# dekorator_nama_lengkap disertia dengan parameter didalamnya
+def nama_lengkap(nama_lengkap):
+    def dekorator_nama_lengkap(func):
+        
+        @functools.wraps(func)
+        def wrapper(nama):
+            nama = f'{func(nama)} {nama_lengkap}'
+            return nama
+        return wrapper
+    return dekorator_nama_lengkap
+
+
+var = 'Kurniawan'
+@nama_lengkap(var)
+def cetak_nama_siswa(nama):
+    return f'Nama : {nama}'
