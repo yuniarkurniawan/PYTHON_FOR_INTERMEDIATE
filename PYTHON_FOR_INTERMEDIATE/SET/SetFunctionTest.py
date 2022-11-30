@@ -104,6 +104,56 @@ class SetFunctionTest(unittest.TestCase):
         self.assertNotEqual(list_result, [1, 4, 5])
     # ========== END SYMMETRICT_DIFFERENCE TEST
 
+    # ========== BEGIN COPY TEST
+    def test_set_copy_success_scenario(self) -> None:
+        set_satu = {1, 2, 3}
+        set_function = SetFunction(set_satu, set())
+        result_copy = set_function.\
+            copy_function()
+
+        # set adalah unordered maka harus dirubah menjadi list terlebih dahulu
+        list_result = list(result_copy)
+        list_result.sort()
+        self.assertEqual(list_result, [1, 2, 3])
+
+    def test_set_copy_fail_scenario(self) -> None:
+        set_satu = {1, 2, 3}
+        set_function = SetFunction(set_satu, set())
+        result_copy = set_function.\
+            symmetric_difference_function()
+
+        # set adalah unordered maka harus dirubah menjadi list terlebih dahulu
+        list_result = list(result_copy)
+        list_result.sort()
+        self.assertNotEqual(list_result, [1, 4, 5])
+    # ========== END COPY TEST
+
+    # ========== BEGIN DISCARD TEST
+    def test_set_discard_success_scenario(self) -> None:
+        set_satu = {1, 2, 3}
+        set_function = SetFunction(set_satu, set())
+        elemen_hapus = 1
+        result_discard = set_function.\
+            discard_function(elemen_hapus)
+
+        # set adalah unordered maka harus dirubah menjadi list terlebih dahulu
+        list_result = list(result_discard)
+        list_result.sort()
+        self.assertEqual(list_result, [2, 3])
+
+    def test_set_discard_fail_scenario(self) -> None:
+        set_satu = {1, 2, 3}
+        set_function = SetFunction(set_satu, set())
+        elemen_hapus = 1
+        result_discard = set_function.\
+            discard_function(elemen_hapus)
+
+        # set adalah unordered maka harus dirubah menjadi list terlebih dahulu
+        list_result = list(result_discard)
+        list_result.sort()
+        self.assertNotEqual(list_result, [1, 4, 5])
+    # ========== END DISCARD TEST
+
     # ========== BEGIN ISDISJOINT TEST
     def test_set_isdisjoint_success_scenario(self) -> None:
         set_satu = {1, 2}
@@ -122,7 +172,27 @@ class SetFunctionTest(unittest.TestCase):
             isdisjoint_function()
 
         self.assertNotEqual(result_isdisjoint, True)
-    # ========== END SYMMETRICT_DIFFERENCE TEST
+    # ========== END ISDISJOINT TEST
+
+    # ========== BEGIN ISSUBSET TEST
+    def test_set_issubset_success_scenario(self) -> None:
+        set_satu = {1, 2, 4}
+        set_dua = {3, 4, 5, 1, 2}
+        set_function = SetFunction(set_satu, set_dua)
+        result_issubset = set_function.\
+            issubset_function()
+
+        self.assertEqual(result_issubset, True)
+
+    def test_set_issubset_fail_scenario(self) -> None:
+        set_satu = {1, 2, 3}
+        set_dua = {3, 4}
+        set_function = SetFunction(set_satu, set_dua)
+        result_issubset = set_function.\
+            issubset_function()
+
+        self.assertNotEqual(result_issubset, True)
+    # ========== END ISSUBSET TEST
 
 
 if __name__ == '__main__':

@@ -35,9 +35,26 @@ class SetFunction:
             symmetric_difference(self.data_set_bilangan_dua)
         return set_symmetrict_difference
 
+    # fungsi copy digunakan untuk mencipatakan objek baru dengan nilai set baru
+    def copy_function(self):
+        set_copy = self.data_set_bilangan_satu.copy()
+        return set_copy
+
+    # fungsi discard() digunakan untuk menghapus elemen dari suatu set
+    def discard_function(self, elemen_hapus):
+        self.data_set_bilangan_satu.discard(elemen_hapus)
+        return self.data_set_bilangan_satu
+
     # fungsi isdisjoint akan mengembalikan nilai boolean. Jika terdapat satu
     # kesamaan saja maka akan bernilai False
     def isdisjoint_function(self):
         set_isdisjoint = self.data_set_bilangan_satu.\
             isdisjoint(self.data_set_bilangan_dua)
         return set_isdisjoint
+
+    # fungsi issubset akan mengembalikan nilai boolean. Jika seluruh elemen set kiri
+    # berada pada set sebelah kanan maka akan bernilai True, begitupun sebaliknya
+    def issubset_function(self):
+        set_issubset = self.data_set_bilangan_satu.\
+            issubset(self.data_set_bilangan_dua)
+        return set_issubset
