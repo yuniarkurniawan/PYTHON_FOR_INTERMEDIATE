@@ -30,6 +30,30 @@ class SetFunctionTest(unittest.TestCase):
         self.assertNotEqual(list_result, [1, 3, 8])
     # ========== END INTERSECTION TEST
 
+    # ========== BEGIN UNION TEST
+    def test_set_union_success_scenario(self) -> None:
+        set_satu = {1, 2}
+        set_dua = {3, 4}
+        set_function = SetFunction(set_satu, set_dua)
+        result_union = set_function.union_function()
+
+        # set adalah unordered maka harus dirubah menjadi list terlebih dahulu
+        list_result = list(result_union)
+        list_result.sort()
+        self.assertEqual(list_result, [1, 2, 3, 4])
+
+    def test_set_union_fail_scenario(self) -> None:
+        set_satu = {1, 2}
+        set_dua = {3, 4}
+        set_function = SetFunction(set_satu, set_dua)
+        result_union = set_function.union_function()
+
+        # set adalah unordered maka harus dirubah menjadi list terlebih dahulu
+        list_result = list(result_union)
+        list_result.sort()
+        self.assertNotEqual(list_result, [4, 5, 6, 7])
+    # ========== END UNION TEST
+
 
 if __name__ == '__main__':
     unittest.main()
