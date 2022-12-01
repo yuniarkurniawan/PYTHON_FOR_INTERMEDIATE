@@ -112,3 +112,68 @@ dict_update = dict(baru='saja', diubah='oke')
 dict_data_baru.update(dict_update)
 print(dict_update)
 # akan mencatak {'baru': 'saja', 'diubah': 'oke'}
+
+
+
+dict_list_nilai = {
+    'list': [1, 2, 3, 4],
+    'set': {1, 4, 6, 7}
+}
+
+def cetak_list_nilai(dict_list_nilai: dict = dict()):
+    for key, val in dict_list_nilai.items():
+
+        print(f'Key : {key}')
+        for val_data in val:
+            print(f'{val_data}')
+        print(f'------------')
+
+cetak_list_nilai(dict_list_nilai)
+# akan mencetak
+# Key : list
+# 1
+# 2
+# 3
+# 4
+# ------------
+# Key : set
+# 1
+# 4
+# 6
+# 7
+
+
+# data pada dictionary yang berupa list dan set dapat dilakukan operasi2 list dan set
+dict_list_nilai['list'].append(5)
+dict_list_nilai['list'].insert(0, 0)
+dict_list_nilai['list'].extend([6, 7, 8, 9, 10])
+
+dict_list_nilai['set'].add(11)
+dict_list_nilai['set'].add(14)
+dict_list_nilai['set'].update([98, 77])
+
+cetak_list_nilai(dict_list_nilai)
+# akan mencetak
+# Key : list
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+# ------------
+# Key : set
+# 1
+# 98
+# 4
+# 6
+# 7
+# 11
+# 77
+# 14
+# ------------
