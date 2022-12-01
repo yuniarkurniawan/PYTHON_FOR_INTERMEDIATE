@@ -1,3 +1,4 @@
+from collections import OrderedDict, defaultdict
 
 # cara deklarasi 1
 dict_data_siswa = dict(nrp="2002001",
@@ -177,3 +178,23 @@ cetak_list_nilai(dict_list_nilai)
 # 77
 # 14
 # ------------
+
+
+# gunakan OrderedDict jika ingin output TERURUT sesuai ketka dibuat/deklarasi
+# karena sering output tidak berurut sesuai ketika deklarasi
+data_ganjil = OrderedDict()
+data_ganjil["1"] = 1
+data_ganjil["3"] = 3
+data_ganjil["5"] = 5
+
+
+# gunakan defaultdict(<tipe_data>) untuk menghindari error ketika ingin mengakses berdasarkan key
+data_genap = defaultdict(list)
+data_genap["2"] = 2
+data_genap["4"] = 4
+data_genap["6"] = 6
+
+print(data_genap["2"])
+# akan mencetak 2
+print(data_genap["8"])
+# akan mencatak []
