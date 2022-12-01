@@ -1,4 +1,4 @@
-# lambda arguments: expression
+# lambda argument: isi fungsi lambda
 
 # 1. ============== DASAR
 # versi fungsi lambda
@@ -50,3 +50,14 @@ print(bil_genap_func(listing))
 listing = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 bil_genap = list(filter(lambda val: val % 2 == 0, listing))
 print(bil_genap)
+
+
+
+def cetak_nama(nama):
+    print(f'Nama saya : {nama}')
+
+nama_saya = lambda nama = 'Yuniar': cetak_nama(nama)
+nama_saya('Yuniar Kurniawan')
+# akan mencteak 'Yuniar Kurniawan'
+nama_saya()
+# akan mencetak 'Yuniar'
