@@ -198,3 +198,9 @@ print(data_genap["2"])
 # akan mencetak 2
 print(data_genap["8"])
 # akan mencatak []
+
+
+# fungsi sum bisa digunakan untuk menjumlah seluruh elemen yang bertipe int/float
+dict_data_sum = {'a': 1, 'b': 2, 'c': 3}
+print(f'Jumlah values{sum(dict_data_sum.values())}')
+# akan mencetak 6
